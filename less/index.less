@@ -4,6 +4,8 @@
    License: none (public domain)
 */
 
+
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -29,8 +31,15 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+html{
+	font-size:62.5%;
+}
 body {
 	line-height: 1;
+	
+	font-size:1.6rem;
+	
+	
 }
 ol, ul {
 	list-style: none;
@@ -53,7 +62,317 @@ table {
     box-sizing: border-box;
 }
 
+
+/******MIXINS AND VARIABLES ****************/
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Rubik&display=swap');
+
+
+.introPadding{
+	padding-left:4%;
+	padding-top:4%;
+	padding-bottom:2%;
+	
+}
+
+.overviewPadding{
+	padding-left:4%;
+	padding-top:1%;
+	padding-bottom:1%;
+}
+
+.center{
+	display:flex;
+	justify-content:center;
+	padding:1.25% 0px;
+}
+
+.overviewH4Font{
+			font-size:3rem;
+}
+
+@introPFont: 2rem;
+
+@titleFont: 'Rubik', sans-serif;
+
+@pFont:'Alegreya', serif;
+@hfColor:rgb(69, 69, 134);
+@hfWordColor: white;
+
+
+
 html, body {
     height: 100%;
+}
+
+.container{
+	width:100%;
+	
+}
+header nav{
+	
+	display:flex;
+	justify-content:flex-end;
+	width:100%;
+	padding: 2%;
+	background:@hfColor;
+
+	
+
+.links{
+	width: 60%;
+	display:flex;
+	justify-content: flex-end;
+	justify-content:space-evenly;
+
+
+	@media screen and (max-width:730px)
+	{
+		width: 100%;
+	display:flex;
+	justify-content: space-evenly;
+	}
+
+	 a{
+		text-decoration: none;
+		color:@hfWordColor;
+	}
+	
+}//closes Links container
+} //closes Nav Container
+
+.about{
+	width:100%;
+	background-color:white;
+	background: url();
+	display:flex;
+	flex-direction:column;
+	padding-bottom: 4%;
+	border-bottom:1px solid black;
+
+	
+
+	.intro{
+		
+		width:100%;
+		.introPadding();
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+
+		.image{
+			width:100%;
+			margin: auto 0;
+			padding:1%;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			object-fit:contain;
+
+			@media screen and(max-width:729px)
+			{
+				display:none;
+			}
+			
+			
+		} //Closes IMG in About
+		
+
+		h2{
+			font-size:4rem;
+			display:flex;
+			justify-content:center;
+			padding-top:5%;
+			font-family: @titleFont;
+			
+		}
+		p{
+			font-size: @introPFont;
+			.center();
+
+			border-bottom: 1px dashed black;
+		}
+
+	}// end intro class
+
+	.intro2{
+		width:100%;
+		.introPadding();
+		font-size:@introPFont;
+		padding-top:2%;
+		padding-bottom: 1%;
+		display:flex;
+		flex-direction:column;
+
+		p{
+			padding-top:1%;
+		}
+	}
+
+	.section1{
+		width:100%;
+		.center();
+		flex-direction:column;
+		align-items:center;
+		font-family:@titleFont;
+
+	}
+	.section2{
+		width:100%;
+		.center();
+		
+	
+
+	button{
+		padding:.1% 1%;
+		
+		color:rgb(0, 54, 38);
+		background-color:rgba(160, 51, 8, 0);
+		border:1px solid rgb(0, 54, 38);
+		width:20%;
+		font-size:1.6rem;
+		display:flex;
+		justify-content:center;
+		font-family:@pFont;
+	}
+}
+
+}//Closes About section
+
+.skills{
+	width:100%;
+	background-color:rgb(120, 120, 221);
+	display:flex;
+	color:white;
+	@media screen and (max-width:500px)
+	{
+		display:flex;
+		flex-direction:column;
+	}
+	
+
+	.overview{
+		display:flex;
+		justify-content:center;
+		flex-wrap:wrap;
+		width:60%;
+		padding: 2% 1%;
+
+
+		@media screen and(max-width:500px)
+		{
+			width: 100%;
+		}
+
+		h4{
+			.overviewH4Font();
+			padding-bottom:4%;
+			font-family: @titleFont;
+		}
+
+		p{
+			padding-bottom:4%;
+			font-family:@pFont;
+		}
+
+	}//closes Overview
+
+	.roles{
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
+		width:40%;
+		border-left:1px solid black;
+
+		@media screen and(max-width:500px)
+		{
+			width:100%;
+		}
+
+		h4{
+		.overviewH4Font();
+		border-bottom: 1px solid black;
+		margin-bottom:10%;
+		font-family: @titleFont;
+
+		@media screen and (max-width:500px)
+		{
+			margin:auto 0;
+			padding-bottom: .5%;
+		}
+		}
+
+		ol{
+			list-style-type:upper-roman;
+
+			@media screen and (max-width:500px)
+			{
+				margin-bottom:5%;
+			}
+		}
+
+	}//end Roles
+	}//closes Skills
+
+	.gamesPlayed{
+
+		padding: 4% 0%;
+
+		h3{
+			display:flex;
+			justify-content: center;
+			padding-bottom: 4%;
+			font-size:2.8rem;
+			font-family:@titleFont;
+		}
+
+		table, td, th {  
+			border: 1px solid #ddd;
+			text-align: left;
+		  }
+		  
+		  table {
+			border-collapse: collapse;
+			width: 100%;
+		  }
+		  
+		  th, td {
+			padding: 15px;
+		  }
+
+	
+	.heroes{
+		font-family:@pFont;
+	}//end heroes
+}//End Games Played
+
+footer{
+	width:100%;
+	padding:2.5%;
+	background-color:@hfColor;
+	color:white;
+	
+	
+	h3{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		color:@hfWordColor;
+	}
+
+	.contact{
+		@media screen and (max-width:500px)
+		{
+			p{
+			display:flex;
+			flex-direction:column;
+			justify-content:center;
+			align-items:center;
+			padding-bottom:2%;
+			}
+
+		}
+	}
 }
 
