@@ -1,1 +1,407 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  line-height: 1;
+  font-size: 1.6rem;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+/******MIXINS AND VARIABLES ****************/
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nBrXk.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Alegreya Regular'), local('Alegreya-Regular'), url(https://fonts.gstatic.com/s/alegreya/v13/4UaBrEBBsBhlBjvfkSLhx60.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nBrXk.ttf) format('truetype');
+}
+.introPadding {
+  padding-left: 4%;
+  padding-top: 4%;
+  padding-bottom: 2%;
+}
+.overviewPadding {
+  padding-left: 4%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  padding: 1.25% 0px;
+}
+.overviewH4Font {
+  font-size: 3rem;
+}
+html,
+body {
+  height: 100%;
+}
+.container {
+  width: 100%;
+}
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 2%;
+  background: #454586;
+}
+header nav .links {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 730px) {
+  header nav .links {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+header nav .links a {
+  text-decoration: none;
+  color: white;
+}
+.about {
+  width: 100%;
+  background-color: white;
+  background: url();
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4%;
+  border-bottom: 1px solid black;
+}
+.about .intro {
+  width: 100%;
+  padding-left: 4%;
+  padding-top: 4%;
+  padding-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.about .intro .image {
+  width: 100%;
+  margin: auto 0;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+}
+@media screen and (max-width: 729px) {
+  .about .intro .image {
+    display: none;
+  }
+}
+.about .intro h2 {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  font-family: 'Rubik', sans-serif;
+}
+.about .intro p {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  padding: 1.25% 0px;
+  border-bottom: 1px dashed black;
+}
+.about .intro2 {
+  width: 100%;
+  padding-left: 4%;
+  padding-top: 4%;
+  padding-bottom: 2%;
+  font-size: 2rem;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  display: flex;
+  flex-direction: column;
+}
+.about .intro2 p {
+  padding-top: 1%;
+}
+.about .section1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1.25% 0px;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Rubik', sans-serif;
+}
+.about .section2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1.25% 0px;
+}
+.about .section2 button {
+  padding: 0.1% 1%;
+  color: #003626;
+  background-color: rgba(160, 51, 8, 0);
+  border: 1px solid #003626;
+  width: 20%;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'Alegreya', serif;
+}
+.skills {
+  width: 100%;
+  background-color: #7878dd;
+  display: flex;
+  color: white;
+}
+@media screen and (max-width: 500px) {
+  .skills {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.skills .overview {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+  padding: 2% 1%;
+}
+@media screen and (max-width: 500px) {
+  .skills .overview {
+    width: 100%;
+  }
+}
+.skills .overview h4 {
+  font-size: 3rem;
+  padding-bottom: 4%;
+  font-family: 'Rubik', sans-serif;
+}
+.skills .overview p {
+  padding-bottom: 4%;
+  font-family: 'Alegreya', serif;
+}
+.skills .roles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  border-left: 1px solid black;
+}
+@media screen and (max-width: 500px) {
+  .skills .roles {
+    width: 100%;
+  }
+}
+.skills .roles h4 {
+  font-size: 3rem;
+  border-bottom: 1px solid black;
+  margin-bottom: 10%;
+  font-family: 'Rubik', sans-serif;
+}
+@media screen and (max-width: 500px) {
+  .skills .roles h4 {
+    margin: auto 0;
+    padding-bottom: 0.5%;
+  }
+}
+.skills .roles ol {
+  list-style-type: upper-roman;
+}
+@media screen and (max-width: 500px) {
+  .skills .roles ol {
+    margin-bottom: 5%;
+  }
+}
+.gamesPlayed {
+  padding: 4% 0%;
+}
+.gamesPlayed h3 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 4%;
+  font-size: 2.8rem;
+  font-family: 'Rubik', sans-serif;
+}
+.gamesPlayed table,
+.gamesPlayed td,
+.gamesPlayed th {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.gamesPlayed table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.gamesPlayed th,
+.gamesPlayed td {
+  padding: 15px;
+}
+.gamesPlayed .heroes {
+  font-family: 'Alegreya', serif;
+}
+footer {
+  width: 100%;
+  padding: 2.5%;
+  background-color: #454586;
+  color: white;
+}
+footer h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+@media screen and (max-width: 500px) {
+  footer .contact p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2%;
+  }
+}
